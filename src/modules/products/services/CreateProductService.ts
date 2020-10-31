@@ -18,14 +18,15 @@ class CreateProductService {
     private productsRepository: IProductsRepository) {}
 
   public async execute({ name, price, quantity }: IRequest): Promise<Product> {
-    const productExist = this.productsRepository.findByName(name);
+    const productExist = await this.productsRepository.findByName(name);
 
     if(productExist)
      throw new AppError('Product exist');
 
-    const createProduct = this.productsRepository.create({
+    const createProduct = await this.productsRepository.create({
       name, price, quantity
      })
+console.log(createProduct);
 
      return createProduct;
   }
