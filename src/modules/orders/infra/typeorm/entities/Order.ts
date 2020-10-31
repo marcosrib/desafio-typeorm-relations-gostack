@@ -10,7 +10,7 @@ import {
 
 import Customer from '@modules/customers/infra/typeorm/entities/Customer';
 import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
-
+@Entity('orders')
 class Order {
 
   @PrimaryGeneratedColumn()
