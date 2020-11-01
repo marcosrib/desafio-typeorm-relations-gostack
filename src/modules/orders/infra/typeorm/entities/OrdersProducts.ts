@@ -14,19 +14,19 @@ import Product from '@modules/products/infra/typeorm/entities/Product';
 class OrdersProducts {
   @PrimaryGeneratedColumn()
   id: string;
-  @ManyToOne(() => Order)
+  @ManyToOne(() => Order, order => order.order_products)
   @JoinColumn({ name: 'order_id' })
   order: Order;
-  @ManyToOne(() => Product)
+  @ManyToOne(() => Product, product => product.order_products)
   @JoinColumn({ name: 'product_id' })
   product: Product;
   @Column()
   product_id: string;
   @Column()
   order_id: string;
-  @Column()
+  @Column('decimal')
   price: number;
-  @Column()
+  @Column('int')
   quantity: number;
   @CreateDateColumn()
   created_at: Date;
