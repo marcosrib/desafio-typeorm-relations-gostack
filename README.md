@@ -36,7 +36,7 @@ A idéia deste desafio é praticar relacionamentos ManyToMany com TypeORM.
 ## :arrow_forward: Como executar:
 No terminal clone o projeto.
 ```
-git clone https://github.com/marcosrib/desafio-typeorm-relations-gostack.git
+git clone https://github.com/marcosrib/pequeno-e-commerce.git
 ```
 Entre na pasta do projeto e instale as dependências executando.
 ```
