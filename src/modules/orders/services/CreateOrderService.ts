@@ -42,7 +42,7 @@ class CreateOrderService {
 
     const productExist = findProducts.map(product => productIds.includes(product.id))
 
-    console.log(productExist);
+    console.log(findCustomer);
 
     if (!productExist) {
       throw new AppError('Product not exist', 400)
@@ -50,7 +50,7 @@ class CreateOrderService {
 
 
 
-    if (!findCustomer) {
+    if (findCustomer === undefined) {
       throw new AppError('Customer not exist', 400);
     }
 
